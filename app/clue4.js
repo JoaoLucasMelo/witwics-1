@@ -11,7 +11,7 @@
 // output: 7
 
 function daysPosition(day, offset) {
-  // TODO YOUR CODE HERE
+
 }
 
 
@@ -58,5 +58,17 @@ function golfScore(score, par) {
 let count = 0
 
 function cardCounter(card) {
-  // TODO YOUR CODE HERE
+if (card >= 2 && card <= 6, ) {
+ count++
+}
+else if (card >= 10 && card == 'J','K','Q','A') {
+  count--
+}
+if (count > 0) {
+  return count + " Bet"
+}
+else if (count <= 0) {
+  return count + " Hold"
+}
+
 }
