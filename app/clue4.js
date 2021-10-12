@@ -11,9 +11,61 @@
 // output: 7
 
 function daysPosition(day, offset) {
+if (offset) {
+switch (day) {
+    case "sunday":
+      return 7
+      break;
+    case "saturday":
+      return 6
+      break;
+    case "friday":
+      return 5
+      break;
+    case "thursday":
+      return 4
+        break;
+      case "wednesday":
+        return 3;
+      case "tuesday":
+        return 2
+        break;
+      case "monday":
+        return 1
+        break;
+      default:
+        return "That's not a day of the week"
 
+  }}
+  else {
+  switch (day) {
+      case "sunday":
+        return 1
+        break;
+      case "saturday":
+        return 7
+        break;
+      case "friday":
+        return 5
+        break;
+      case "thursday":
+        return 5
+        break;
+      case "wednesday":
+        return 4
+        break;
+      case "tuesday":
+        return 3
+        break;
+      case "monday":
+        return 2
+        break;
+      default:
+        return "That's not a day of the week"
+
+    }
+  }
 }
-
 
 
 // We have found that on the day of the caper is a golf tournament. The prize includes among other things a large coupon to the local costume shop. By keeping track of who is winning we might be able to bribe the winner to get more info for us.
@@ -32,7 +84,34 @@ function daysPosition(day, offset) {
  */
 
 function golfScore(score, par) {
-  // TODO YOUR CODE HERE
+let difference = 0
+  if (score > par) {
+    difference += score - par
+  } else {
+    difference += score - par
+  }
+
+switch (difference) {
+  case -3:
+    return "Ace"
+    break;
+  case -2:
+    return "Eagle"
+    break;
+  case -1:
+    return "Birdie"
+    break;
+  case 0:
+    return "Par"
+  case 1:
+    return "Bogie"
+    break;
+  case 2:
+    return "Double Bogie"
+    break;
+  default:
+    return "Ouch"
+}
 }
 
 
@@ -58,17 +137,23 @@ function golfScore(score, par) {
 let count = 0
 
 function cardCounter(card) {
-if (card >= 2 && card <= 6, ) {
- count++
-}
-else if (card >= 10 && card == 'J','K','Q','A') {
-  count--
-}
-if (count > 0) {
-  return count + " Bet"
-}
-else if (count <= 0) {
-  return count + " Hold"
+
+switch (card) {
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+    count++
+    break;
+  case '10':
+  case 'J':
+  case 'Q':
+  case 'K':
+  case 'A':
+    count--
+    break;
 }
 
+return (count > 0 ? count + ' ' + 'Bet' : count + ' ' + 'Hold')
 }

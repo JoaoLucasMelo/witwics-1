@@ -5,7 +5,9 @@
 // Given two numbers, write a function that will return  the larger number
 
 function largerNum(num1, num2) {
-  // TODO YOUR CODE HERE
+
+  let maxnum = Math.max(num1,  num2)
+return maxnum
 }
 
 
@@ -20,9 +22,20 @@ function largerNum(num1, num2) {
 // output: "F"
 
 function crimeGrader(successful, total) {
-  // TODO YOUR CODE HERE
-}
 
+  let percentage =  successful/total*100
+  console.log(percentage)
+if (percentage <= 100 && percentage >= 90){
+  return 'A'}
+  else if (percentage < 90 && percentage >= 80){
+    return 'B'}
+    else if (percentage < 80 && percentage >= 70){
+      return 'C'}
+      else if (percentage < 70 && percentage >= 60){
+        return 'D'}
+        else if (percentage < 60){
+          return 'F'}
+} 
 
 // To help us better catch the associate we need to know when they are most active.
 // Given an integer that represents an hour in the day (1 - 24), write a function that returns "morning", "afternoon", "evening", or "night" based off of what hour it is. You'll need to think in military time.
@@ -32,14 +45,33 @@ function crimeGrader(successful, total) {
 //   night is between 10pm and 4am (22 -24 and 1 - 4)
 //   Make sure your ranges are inclusive
 function timeOfDay(hour) {
-  // TODO YOUR CODE HERE
+  if (hour >= 5 && hour <= 11) {
+    return 'morning'
+  } 
+  if (hour >= 12 && hour <= 17) {
+    return 'afternoon'
+  } 
+  if (hour >= 18 && hour <= 21) {
+    return 'evening'
+  } 
+  if (hour >= 22 || hour >= 1 && hour < 5) {
+    return 'night'
+  } 
 }
 
 // Our surveillance team finds the closer we get to catching the associate the hotter the person gets, we can use this to narrow down the person
 
 // Write a function that will take in a number and return 'suspicious' if it indicates the person is over 98.6° and if the person is at or above 103° 'very suspicious', if it is under return 'not suspicious', (hint: try this with string concatenation)
 function isSuspicious(temp) {
-  // TODO YOUR CODE HERE
+ if (temp > 98.6 && temp < 103){
+   return 'suspicious' 
+ }
+ else if (temp >= 103) {
+  return 'very suspicious'
+}
+else {
+  return 'not suspicious'
+}
 }
 
 // We think we might have found the associate, and have added a tracker to their car, to find where the associate is hiding we need to know when their car is stopped
@@ -53,9 +85,14 @@ let exampleCar = {
   color: "Red",
   moving: false
 }
-
 function isStopped(car) {
-  // TODO YOUR CODE HERE  
+  if (car.moving == false) {
+    return true
+  }
+  else {
+    return false
+  }
+
 }
 
 // We have found everything we need to capture the associate, to make sure they don't elude us we want to make sure we only capture them when they are at home and their asleep.
@@ -69,5 +106,10 @@ let suspect = {
 }
 
 function attemptCapture(suspect) {
-  // TODO YOUR CODE HERE
+if (suspect.atHome == true && suspect.asleep == true) {
+  return true
+}
+else {
+  return false
+}
 }
